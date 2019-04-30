@@ -1,0 +1,14 @@
+(foir now, this is just a paste of something i wrote in the Conlang Critic Discord)
+i just had a really cool idea about error correction and grammar in a computer-sciencey conlang
+okay, so: error correction codes (at least the ones i know about) have codewords that consist of data bits and parity bits.
+the parity bits serve the purpose of making the code words more distinct, so that if you either misunderstand a data or a parity bit, you can reconstruct it looking for the code word that is closest to what you heard and from there the correct data bits
+the simplest way to do that is to repeat the data bit two more time, so that if you hear "100", "010" or "001" you assume they said "000" and so the data bit was 0, but you can get more compact codes like a Hamming (7,4) code, where you encode 4 data bits in 7 bit words.
+anyway, ideally you want to put put data and parity bits far apart, so it's less likely that both they are both in a similarly noisy environment
+but this tends to be unpractical for spoken language, because you don't wanna remember like 8-word blocks and then check them one by one, it destroys the flow of the language
+but what if the language splits the words according to semantics:
+it would work kinda like html:
+<go><i></i><to><the_store></the_store></to></go>
+the predicate would surround it's attributes
+and instead of just doubling the word in the closing part, the closing part would consist of the parity bits
+then you only need to make sure that opening and closing parts of a word are very notably distinct, or else you might confuse data and parity parts and get really fucking confused
+oh and of course you need a way to map bits into phonemes if you want a spoken language. ideally similar bit patterns have similar sounds. i tried to do this once and it seemed to work out reasonably well.. 1 bit for voiced vs unvoiced, 1 bit for plosive vs fricative and 2 bits for a ballpark place of articulation..
